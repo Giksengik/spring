@@ -5,11 +5,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
         xmlns:context="http://www.springframework.org/schema/context">
     <bean id="musicBean"
-          class="ru.firstApp.RockMusic">
+          scope="prototype"
+          class="ru.firstApp.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
-    <bean id="musicPlayer"
-    class ="ru.firstApp.MusicPlayer"
-    scope="prototype">
-        <property name="music" ref="musicBean"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--    class ="ru.firstApp.MusicPlayer"-->
+<!--    scope="prototype">-->
+<!--        <property name="music" ref="musicBean"/>-->
+<!--    </bean>-->
 </beans>
