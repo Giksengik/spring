@@ -5,6 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
         xmlns:context="http://www.springframework.org/schema/context">
     <bean id="musicBean"
-          class="ru.firstApp.JazzMusic">
+          class="ru.firstApp.RockMusic">
+    </bean>
+    <bean id="musicPlayer"
+    class ="ru.firstApp.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 </beans>
