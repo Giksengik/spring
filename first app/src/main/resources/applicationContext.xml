@@ -5,10 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
         xmlns:context="http://www.springframework.org/schema/context">
     <bean id="musicBean"
-          scope="prototype"
           class="ru.firstApp.ClassicalMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy">
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 <!--    <bean id="musicPlayer"-->
 <!--    class ="ru.firstApp.MusicPlayer"-->

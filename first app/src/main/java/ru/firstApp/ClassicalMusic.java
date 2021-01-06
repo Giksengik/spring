@@ -13,4 +13,8 @@ public class ClassicalMusic implements Music {
     public String getSong(){
         return "Hungarian Rhapsody";
     }
+    private ClassicalMusic(){}
+    public static ClassicalMusic getClassicalMusic(){
+        return new ClassicalMusic();
+    }
 }

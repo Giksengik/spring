@@ -8,7 +8,8 @@
           scope="prototype"
           class="ru.firstApp.ClassicalMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy">
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 <!--    <bean id="musicPlayer"-->
 <!--    class ="ru.firstApp.MusicPlayer"-->
