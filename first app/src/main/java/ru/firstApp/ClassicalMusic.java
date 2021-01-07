@@ -1,6 +1,5 @@
 package ru.firstApp;
 
-import jdk.nashorn.internal.parser.JSONParser;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,8 +11,8 @@ public class ClassicalMusic implements Music {
         System.out.println("Doing my destruction");
     }
     @Override
-    public String getSong(){
-        return "Hungarian Rhapsody";
+    public String[] getSong() {
+        return new String[]{"Eine kleine Nachtmusik", "Für Elise", "O mio babbino caro' from Gianni Schicchi"};
     }
     private ClassicalMusic(){}
     public static ClassicalMusic getClassicalMusic(){

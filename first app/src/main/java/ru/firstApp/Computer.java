@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Computer {
+    private static final MusicList music = MusicList.ROCK ;
     private int id;
     private MusicPlayer musicPlayer;
     @Autowired
@@ -15,6 +16,6 @@ public class Computer {
 
     @Override
     public String toString() {
-        return "Computer " + id+ " "+musicPlayer.playMusic();
+        return "Computer " + id+ " "+musicPlayer.playMusic(music);
     }
 }

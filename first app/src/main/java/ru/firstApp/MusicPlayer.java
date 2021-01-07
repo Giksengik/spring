@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class MusicPlayer {
     private Music music;
@@ -16,8 +18,15 @@ public class MusicPlayer {
         this.music=music;
         this.music2=music2;
     }
-    public String playMusic(){
-        return "Playing: "+this.music.getSong() +" and " +this.music2.getSong();
+    public String playMusic(MusicList musicList){
+        final Random random = new Random();
+        switch (musicList){
+            case CLASSICAL:
+                return "Playing: "+this.music2.getSong()[random.nextInt(3)];
+            case ROCK:
+                return "Playing: "+this.music.getSong()[random.nextInt(3)];
+        }
 
+        return null;
     }
 }
