@@ -2,7 +2,7 @@ package ru.firstApp;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class ClassicalMusic implements Music {
     public void doMyInit(){
         System.out.println("Doing my initialization");
@@ -14,7 +14,7 @@ public class ClassicalMusic implements Music {
     public String[] getSong() {
         return new String[]{"Eine kleine Nachtmusik", "Für Elise", "O mio babbino caro' from Gianni Schicchi"};
     }
-    private ClassicalMusic(){}
+    ClassicalMusic(){}
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();
     }

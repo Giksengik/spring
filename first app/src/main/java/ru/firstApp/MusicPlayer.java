@@ -6,13 +6,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
     private Music music;
     private Music music2;
     private String name;
     private int volume;
-@Autowired
     public MusicPlayer(@Qualifier("rockMusic") Music music,
                        @Qualifier("classicalMusic") Music music2) {
         this.music=music;
