@@ -1,8 +1,19 @@
 package ru.firstApp;
 
-import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.Arrays;
 
+public class MusicList {
+    private ArrayList<String> listOfMusic;
+    MusicList(ClassicalMusic classicalMusic ,RockMusic rockMusic,
+              JazzMusic jazzMusic){
+        listOfMusic = new ArrayList<String>();
+        listOfMusic.addAll(Arrays.asList(classicalMusic.getSong()));
+        listOfMusic.addAll(Arrays.asList(jazzMusic.getSong()));
+        listOfMusic.addAll(Arrays.asList(rockMusic.getSong()));
+    }
 
-public enum MusicList {
-CLASSICAL,ROCK;
+    public ArrayList<String> getListOfMusic() {
+        return listOfMusic;
+    }
 }

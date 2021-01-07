@@ -4,6 +4,6 @@ import org.springframework.stereotype.Component;
 public class RockMusic implements Music {
     @Override
     public String[] getSong() {
-        return new String[]{"Safe at Home", "Sweetheart of the Rodeo", " Rory Storm and the Hurricanes"};
+        return new String[]{"Safe at Home", "Sweetheart of the Rode", " Rory Storm and the Hurricanes"};
     }
 }

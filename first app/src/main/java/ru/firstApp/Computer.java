@@ -8,12 +8,11 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 public class Computer {
-    private static final MusicList music = MusicList.ROCK ;
     @Value("${computer.id}")
     private int id;
     @Value("${computer.name}")
     private String name;
-    private MusicPlayer musicPlayer;
+    public MusicPlayer musicPlayer;
     public Computer(MusicPlayer musicPlayer) {
         this.musicPlayer = musicPlayer;
     }
@@ -24,9 +23,5 @@ public class Computer {
     @PreDestroy
     public void doMyDestroy(){
         System.out.println("Destroying.....");
-    }
-    @Override
-    public String toString() {
-        return "Computer " + id+" "+ name+" "+musicPlayer.playMusic(music);
     }
 }

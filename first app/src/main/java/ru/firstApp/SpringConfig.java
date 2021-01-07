@@ -12,18 +12,24 @@ public class SpringConfig {
     public ClassicalMusic classicalMusic(){
         return new ClassicalMusic();
     }
-
     @Bean
     public RockMusic rockMusic(){
         return new RockMusic();
     }
     @Bean
+    public JazzMusic jazzMusic(){
+        return  new JazzMusic();
+    }
+    @Bean
+    public MusicList musicList(){
+        return new MusicList(classicalMusic(),rockMusic(),jazzMusic());
+    }
+    @Bean
     public MusicPlayer musicPlayer(){
-        return new MusicPlayer(rockMusic(),classicalMusic());
+        return new MusicPlayer(musicList());
     }
     @Bean
     public Computer computer(){
         return new Computer(musicPlayer());
     }
-
 }
