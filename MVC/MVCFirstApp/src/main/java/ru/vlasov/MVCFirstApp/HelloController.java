@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
 public class HelloController {
-    @GetMapping("/hello-world")
+    @RequestMapping("/")
+    @GetMapping("hello_world")
     public String sayHello() {
-        return "hello_world";
+        return "/hello_world";
     }
 }
