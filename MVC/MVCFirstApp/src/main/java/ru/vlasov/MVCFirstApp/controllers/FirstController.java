@@ -22,4 +22,20 @@ public class FirstController {
     public String goodByePage(){
         return("first/goodbye");
     }
+    @GetMapping("calculator")
+    public String calculate(@RequestParam(value = "a")int a,
+                            @RequestParam(value = "b") int b,
+                            @RequestParam(value = "action") String action,Model model){
+        if(action.equals("multiplication")){
+            model.addAttribute("result",a*b);
+        }else if(action.equals("addition")){
+            model.addAttribute("result",a+b);
+        }else if(action.equals("subtraction")){
+            model.addAttribute("result",a-b);
+        }else if(action.equals("division")){
+            if(b==0) model.addAttribute("result","infinity");
+            else model.addAttribute("result",a/b);
+        }
+        return("first/calculator");
+    }
 }
