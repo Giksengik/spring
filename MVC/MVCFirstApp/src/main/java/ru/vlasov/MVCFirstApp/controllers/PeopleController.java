@@ -23,7 +23,11 @@ public class PeopleController {
         model.addAttribute("people", personDAO.index());
         return "people/index";
     }
-
+    @PostMapping("/new")
+    public String createRandom(){
+        personDAO.createRandom();
+        return "redirect:/people";
+    }
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
@@ -35,7 +39,7 @@ public class PeopleController {
         return "people/new";
     }
     @PostMapping()
-    public String create(@ModelAttribute("perspn") Person person){
+    public String create(@ModelAttribute("person") Person person){
         personDAO.save(person);
         return "redirect:/people";
     }
@@ -55,5 +59,9 @@ public class PeopleController {
         personDAO.delete(id);
         return "redirect:/people";
     }
-
+    @PostMapping("/{id}")
+    public String clone(@PathVariable("id") int id){
+        personDAO.clone(id);
+        return "redirect:/people";
+    }
 }
