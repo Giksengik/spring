@@ -44,6 +44,6 @@ public class PersonDao {
     }
 
     public void delete(int id) {
-        people.removeIf(p -> p.getId() == id);
+            people.removeIf(p -> p.getId() == id);
     }
 }

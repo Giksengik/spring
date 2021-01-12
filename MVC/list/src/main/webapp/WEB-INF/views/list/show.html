@@ -6,5 +6,9 @@
 </head>
 <body>
 <p th:text="${task.getName()+ ', '+task.getId()}">VALUE</p>
+<a th:href="@{/list/{id}/edit(id=${task.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/list/{id}(id=${task.getId()})}" th:object="${task}">
+    <input type="submit" value="DELETE"/>
+</form>
 </body>
 </html>

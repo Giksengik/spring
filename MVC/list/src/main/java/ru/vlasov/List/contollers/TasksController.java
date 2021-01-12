@@ -35,6 +35,22 @@ public class TasksController {
         tasksDao.save(task);
         return("redirect:/list");
     }
+    @GetMapping("/{id}/edit")
+    public String update(Model model,@PathVariable("id") int id){
+        model.addAttribute("task",tasksDao.show(id));
+        return "/list/edit";
+    }
+    @PatchMapping("/{id}")
+    public String edit(@ModelAttribute("task") Task task,@PathVariable("id") int id){
+        tasksDao.edit(id,task);
+        return"redirect:/list";
+    }
+    @DeleteMapping("/{id}")
+    public String delete(@ModelAttribute("task") Task task,
+                         @PathVariable("id") int id){
+        tasksDao.delete(id);
+        return "redirect:/list";
+    }
 
 
 }

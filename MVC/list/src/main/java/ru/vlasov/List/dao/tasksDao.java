@@ -27,5 +27,11 @@ public class tasksDao {
         task.setId(++TASKS_COUNT);
         list.add(task);
     }
-
+    public void edit(int id,Task task){
+        Task taskToBeEdit = show(id);
+        taskToBeEdit.setName(task.getName());
+    }
+    public void delete(int id){
+        list.removeIf(p -> p.getId() == id);
+    }
 }
