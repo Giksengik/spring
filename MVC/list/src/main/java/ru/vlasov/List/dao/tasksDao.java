@@ -23,5 +23,9 @@ public class tasksDao {
     public Task show(int id){
         return list.stream().filter(task -> task.getId() == id).findAny().orElse(null);
     }
+    public void save(Task task){
+        task.setId(++TASKS_COUNT);
+        list.add(task);
+    }
 
 }

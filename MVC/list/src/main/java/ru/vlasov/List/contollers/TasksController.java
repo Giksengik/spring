@@ -3,10 +3,7 @@ package ru.vlasov.List.contollers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.vlasov.List.models.Task;
 
 @Controller
@@ -29,5 +26,15 @@ public class TasksController {
         model.addAttribute("task",tasksDao.show(id));
         return("list/show");
     }
+    @GetMapping("/new")
+    public String newTask(@ModelAttribute("task") Task task){
+        return "list/new";
+    }
+    @PostMapping()
+    public String create(@ModelAttribute("task") Task task){
+        tasksDao.save(task);
+        return("redirect:/list");
+    }
+
 
 }

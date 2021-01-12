@@ -8,6 +8,9 @@ public class Task {
         this.name = name;
         this.id=id;
     }
+    public Task(){
+
+    }
 
     public String getName() {
         return name;
